@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>HR | Edit</title>
+    <link rel="icon" href="images/resources.png">
+</head>
+
+<body>
+    <header>
+        <div>
+            <img src="images/resources.png" alt="HR-image" width="50">
+        </div>
+        <nav>
+            <ul>
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+                <li>
+                    <a href="add.html">Add Employee</a>
+                </li>
+                <li>
+                    <a href="vacations.html">Submitted Vacations</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Edit Employee:</h2>
+        <form action="index.html" method="post">
+            <label for="id">ID:</label>
+            <input type="number" name="id" placeholder="Id" value="01" required><br>
+            <label for="name">Name:</label>
+            <input type="text" name="name" placeholder="Name" value="amr" required><br>
+            <label for="email">Email:</label>
+            <input type="text" name="email" placeholder="Email" value="amr@ya.co"><br>
+            <label for="address">Address:</label>
+            <input type="text" name="address" placeholder="Address" value="cairo"><br>
+            <label for="phone">Phone Number:</label>
+            <input type="text" name="phone" placeholder="Phone" value="01xx"><br>
+            <label for="gender">Gender:</label>
+            <input type="radio" name="gender" value="male" checked><label>Male</label>
+            <input type="radio" name="gender" value="female"><label>Female</label><br>
+            <label for="marital_status">Marital Status:</label>
+            <select name="marital_status" id="marital_status">
+                <option value=""></option>
+                <option value="single" selected>Single</option>
+                <option value="taken">Taken</option>
+                <option value="married">Married</option>
+                <option value="divorced">Divorced</option>
+                <option value="divorced">Widowed</option>
+            </select><br>
+            <label for="vacation_left">Remaining Vacation Days:</label>
+            <input type="number" name="vacation_left" placeholder="Remaining Vacation Days" value="10" required><br>
+            <label for="vacation_approved">Approved Vacation Days:</label>
+            <input type="number" name="vacation_approved" placeholder="Approved Vacation Days" value="4" required><br>
+            <label for="salary">Salary:</label>
+            <input type="text" name="salary" placeholder="Salary" value="2500"><br>
+            <label for="birth">Date Of Birth:</label>
+            <input type="date" name="birth" placeholder="Date of Birth" value="24/07/2003"><br><br>
+            <input type="button" onclick="flag()" value="Delete">
+            <input type="reset" value="Reset">
+            <input type="submit" value="Add">
+        </form>
+    </main>
+
+    <script>
+        function flag(){
+            alert("Are you sure you want to delete employee?");
+        }
+    </script>
+</body>
+
+</html>

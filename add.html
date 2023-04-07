@@ -27,7 +27,7 @@
     </header>
     <main>
         <h2>Add an Employee:</h2>
-        <form action="" method="post">
+        <form action="index.html">
             <label for="id">ID:</label>
             <input type="number" name="id" placeholder="Id" required><br>
             <label for="name">Name:</label>
@@ -50,10 +50,6 @@
                 <option value="divorced">Divorced</option>
                 <option value="divorced">Widowed</option>
             </select><br>
-            <label for="vacation_left">Remaining Vacation Days:</label>
-            <input type="number" name="vacation_left" placeholder="Remaining Vacation Days" required><br>
-            <label for="vacation_approved">Approved Vacation Days:</label>
-            <input type="number" name="vacation_approved" placeholder="Approved Vacation Days" required><br>
             <label for="salary">Salary:</label>
             <input type="text" name="salary" placeholder="Salary"><br>
             <label for="birth">Date Of Birth:</label>
@@ -61,6 +57,7 @@
             <input type="reset" value="Reset">
             <input type="submit" value="Add">
         </form>
+        <script type="module" src="js/add.js"></script>
     </main>
 </body>
 

@@ -35,52 +35,19 @@
             <b>Here You can Find all the Employee's Data</b>
         </h3>
         <div>
-            <button>Add Employee</button>
-        </div>
-        <div>
             <h3>To Search for an Employee:</h3>
-            <form action="" method="get">
-                <input type="search" name="search" placeholder="Search by name">
+            <form id="search">
+                <input type="search" name="search" placeholder="Search by name" id="sName">
                 <input type="submit" value="Search">
             </form>
         </div>
         <br>
-        <table style="text-align: center;">
-            <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Email</th>
-                <th>address</th>
-                <th>phone no.</th>
-                <th>gender</th>
-                <th>marital status</th>
-                <th>remaining vacation days</th>
-                <th>approved vacation days</th>
-                <th>salary</th>
-                <th>date of birth</th>
-            </tr>
-            <tr>
-                <td>01</td>
-                <td>amr</td>
-                <td>amr@ya.com</td>
-                <td>cairo</td>
-                <td>01xx</td>
-                <td>male</td>
-                <td>single</td>
-                <td>10</td>
-                <td>4</td>
-                <td>2500</td>
-                <td>24/07/2003</td>
-                <td>
-                    <a href="edit.html">Edit</a>
-                </td>
-                <td>
-                    <a href="vacForm.html">Submit Vacation</a>
-                </td>
-            </tr>
-        </table>
+        <button id="btn">Show All Info</button>
+        <table style="text-align: center;" id="table"></table>
     </main>
     <footer></footer>
+
+    <script type="module" src="js/table.js"></script>
 </body>
 
 </html>

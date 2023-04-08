@@ -38,9 +38,9 @@ const del = document.getElementById("del");
 del.addEventListener("click", flag);
 function flag(){
     if(confirm("Are you sure you want to delete employee?")){
-        data.splice(data.indexOf(selectedObject),1);
+        data.splice(data.homeOf(selectedObject),1);
         console.log(data);
-        // window.location.href="index.html";
+        // window.location.href="home.html";
     }
 }
 
@@ -63,5 +63,5 @@ update.addEventListener("click", (e)=>{
     selectedObject.salary = salaryInput.value;
     selectedObject.dob = birthInput.value;
     console.log(data);
-    // window.location.href="index.html";
+    // window.location.href="home.html";
 });

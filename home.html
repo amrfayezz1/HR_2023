@@ -1,54 +1,53 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title>FCAI | Home</title>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="images/fcaiLogo.jpg">
-    <link rel="stylesheet" href="style/home.css">
+    <title>HR | Home</title>
+    <link rel="icon" href="images/resources.png">
 </head>
+
 <body>
+    <header>
+        <!-- logo -->
+        <div>
+            <img src="images/resources.png" alt="HR-image" width="50">
+        </div>
+        <!-- navbar -->
+        <nav>
+            <ul>
+                <li>
+                    <a href="home.html">Home</a>
+                </li>
+                <li>
+                    <a href="add.html">Add Employee</a>
+                </li>
+                <li>
+                    <a href="vacations.html">Submitted Vacations</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
     <main>
-        <h1>FCAI-CU Projects</h1>
-        <section class="parent">
-            <section>
-                    <a href="login.html" class="login">
-                        <div class="photo">
-                            <img src="images/resources.png" alt="HR">
-                        </div>
-                        <button class="hr">
-                            Human Resources
-                        </button>
-                    </a>
-                </section>
-            <section>
-                <div>
-                    <img src="images/audience.png" alt="SA">
-                </div>
-                <button class="btn">
-                    Student Affairs
-                </button>
-            </section>
-        </section>
-        <section class="parent">
-            <section>
-                <div>
-                    <img src="images/college.png" alt="HS" class="college">
-                </div>
-                <button class="btn">
-                    Higher Studies
-                </button>
-            </section>
-            <section>
-                <div>
-                    <img src="images/flask.png" alt="LT">
-                </div>
-                <button class="btn">
-                    Laboratory Tracking
-                </button>
-            </section>
-        </section>
+        <h1 style="text-align: center;">
+            Welcome the best HR Website
+        </h1>
+        <h3>
+            <b>Here You can Find all the Employee's Data</b>
+        </h3>
+        <div>
+            <h3>To Search for an Employee:</h3>
+            <form id="search">
+                <input type="search" name="search" placeholder="Search by name" id="sName">
+                <input type="submit" value="Search">
+            </form>
+        </div>
+        <br>
+        <button id="btn">Show All Info</button>
+        <table style="text-align: center;" id="table"></table>
     </main>
+    <footer></footer>
+
+    <script type="module" src="js/table.js"></script>
 </body>
+
 </html>

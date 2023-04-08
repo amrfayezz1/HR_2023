@@ -25,7 +25,7 @@ function verifyLogin(e) {
         if (username === accounts[i].username && password === accounts[i].password) {
             showTooltip("Login successful!", "green");
             setTimeout(() => {
-                window.location.href = "index.html";
+                window.location.href = "home.html";
             }, 1500);
             return true;
         }

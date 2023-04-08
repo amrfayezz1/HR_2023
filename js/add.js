@@ -16,7 +16,7 @@ form.addEventListener('submit', (event) => {
 
     const newEmp = new Emp(id,name,email,address,phone,gender,maritalStatus,salary,dob);
     data.push(newEmp);
-    // window.location.href="index.html";
+    // window.location.href="home.html";
     console.log(data);
 });
 console.log(data);

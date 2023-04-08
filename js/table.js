@@ -15,7 +15,7 @@ for (let i = 0; i < data.length; i++) {
                     <td>"+data[i].remVac+"</td>\
                     <td>"+data[i].appVac+"</td>\
                     <td><a href='edit.html?id="+data[i].id+"'>Edit</a></td>\
-                    <td><a href='vacForm.html?id="+data[i].id+"'>Submit Vacation</a></td>";
+                    <td><a href='vacForm.html?id="+data[i].id+"&name="+data[i].name+"'>Submit Vacation</a></td>";
     table.appendChild(row);
 }
 // long data
@@ -54,13 +54,18 @@ const search = document.getElementById('search');
 search.addEventListener('submit', (e)=>{
     e.preventDefault();
     const sName = document.getElementById("sName");
+    let newData=[];
     if(sName.value==""){
         newData=data;
     }else{
         newData = data.filter(x=>x.name.toLowerCase().includes(sName.value.toLowerCase()));
     }
     table.innerHTML="";
-    header.innerHTML+="<th>Email</th>\
+    header.innerHTML="<th>ID</th>\
+                        <th>Name</th>\
+                        <th>remaining vacation days</th>\
+                        <th>approved vacation days</th>\
+                        <th>Email</th>\
                         <th>address</th>\
                         <th>phone no.</th>\
                         <th>gender</th>\

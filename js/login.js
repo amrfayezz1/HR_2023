@@ -18,9 +18,9 @@ function showTooltip(message, color) {
 
 function verifyLogin(e) {
     e.preventDefault();
-    const username = document.getElementById("username").value;
-    const password = document.getElementById("password").value;
-
+    let username = document.getElementById("username").value;
+    let password = document.getElementById("password").value;
+    
     for (let i = 0; i < accounts.length; i++) {
         if (username === accounts[i].username && password === accounts[i].password) {
             showTooltip("Login successful!", "green");
@@ -30,7 +30,13 @@ function verifyLogin(e) {
             return true;
         }
     }
-    showTooltip("Invalid username or password!", "red");
+    if(username=="" || password==""){
+        showTooltip("Empty username or password!", "red");
+    } else{
+        showTooltip("Invalid username or password!", "red");
+    }
+    document.getElementById("username").value="";
+    document.getElementById("password").value="";
     return false;
 }
 

@@ -27,21 +27,22 @@
     </header>
     <main>
         <h2>Submit Vacation Form:</h2>
-        <form action="" method="post">
+        <form id="vac-form">
+            <label>ID: </label>
+            <input type="text" name="id" disabled><br>
+            <label>Name: </label>
+            <input type="text" name="name" disabled><br>
             <label for="from">From Date: </label>
-            <input type="date" name="from" id="from"> <br>
+            <input type="date" name="from" id="from" required> <br>
             <label for="to">To Date: </label>
-            <input type="date" name="to" id="to"> <br>
+            <input type="date" name="to" id="to" required> <br>
             <label for="reason">Reason: </label><br>
             <textarea name="reason" id="reason" cols="30" rows="10"
-                placeholder="Enter reason for vacation"></textarea><br>
-            <label for="status">Status: </label>
-            <input type="text" value="Submitted"><br>
-            <label for="id">ID: </label>
-            <input type="text" placeholder="ID" value="01"><br><br>
+                placeholder="Enter reason for vacation" required></textarea><br>
             <input type="submit" value="Submit">
         </form>
     </main>
+    <script src="js/vacForm.js" type="module"></script>
 </body>
 
 </html>

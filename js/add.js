@@ -19,3 +19,4 @@ form.addEventListener('submit', (event) => {
     // window.location.href="index.html";
     console.log(data);
 });
+console.log(data);

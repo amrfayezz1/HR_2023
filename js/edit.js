@@ -1,7 +1,8 @@
-import {data} from './data.js';
+// import {data} from './data.js';
 
 const urlParams = new URLSearchParams(window.location.search);
 const id = urlParams.get('id');
+const name = urlParams.get('name');
 
 const idInput = document.querySelector('input[name="id"]');
 const nameInput = document.querySelector('input[name="name"]');
@@ -16,7 +17,20 @@ const vacationApprovedInput = document.querySelector('input[name="vacation_appro
 const salaryInput = document.querySelector('input[name="salary"]');
 const birthInput = document.querySelector('input[name="birth"]');
 
-const selectedObject = data.find(obj => obj.id === id);
+// const selectedObject = data.find(obj => obj.id === id);
+const selectedObject ={
+    id: localStorage.getItem("id"+`${id}`),
+    name: localStorage.getItem("name"+`${id}`),
+    address: localStorage.getItem("address"+`${id}`),
+    dob: localStorage.getItem("dob"+`${id}`),
+    email: localStorage.getItem("email"+`${id}`),
+    gender: localStorage.getItem("gender"+`${id}`),
+    marital: localStorage.getItem("marital"+`${id}`),
+    remVac: localStorage.getItem("remVac"+`${id}`),
+    appVac: localStorage.getItem("appVac"+`${id}`),
+    phone: localStorage.getItem("phone"+`${id}`),
+    salary: localStorage.getItem("salary"+`${id}`)
+};
 
 idInput.value = selectedObject.id;
 nameInput.value = selectedObject.name;
@@ -38,9 +52,20 @@ const del = document.getElementById("del");
 del.addEventListener("click", flag);
 function flag(){
     if(confirm("Are you sure you want to delete employee?")){
-        data.splice(data.homeOf(selectedObject),1);
-        console.log(data);
-        // window.location.href="home.html";
+        // data.splice(data.homeOf(selectedObject),1);
+        // console.log(data);
+        localStorage.removeItem("id"+`${id}`);
+        localStorage.removeItem("name"+`${id}`);
+        localStorage.removeItem("email"+`${id}`);
+        localStorage.removeItem("address"+`${id}`);
+        localStorage.removeItem("phone"+`${id}`);
+        localStorage.removeItem("gender"+`${id}`);
+        localStorage.removeItem("marital"+`${id}`);
+        localStorage.removeItem("salary"+`${id}`);
+        localStorage.removeItem("dob"+`${id}`);
+        localStorage.removeItem("remVac"+`${id}`);
+        localStorage.removeItem("appVac"+`${id}`);
+        window.location.href="home.html";
     }
 }
 
@@ -52,16 +77,28 @@ update.addEventListener("click", (e)=>{
     selectedObject.email = emailInput.value;
     selectedObject.address = addressInput.value;
     selectedObject.phone = phoneInput.value;
-    if (maleRadio.checked) {
-        selectedObject.gender = 'male';
-    } else if (femaleRadio.checked) {
-        selectedObject.gender = 'female';
-    }
-    selectedObject.marital = document.querySelector('option:checked').textContent;
-    selectedObject.remVac = vacationLeftInput.value;
-    selectedObject.appVac = vacationApprovedInput.value;
     selectedObject.salary = salaryInput.value;
     selectedObject.dob = birthInput.value;
-    console.log(data);
-    // window.location.href="home.html";
+    selectedObject.remVac = vacationLeftInput.value;
+    selectedObject.appVac = vacationApprovedInput.value;
+    localStorage.setItem("id"+`${id}`, selectedObject.id);
+    localStorage.setItem("name"+`${id}`, selectedObject.name);
+    localStorage.setItem("email"+`${id}`, selectedObject.email);
+    localStorage.setItem("address"+`${id}`, selectedObject.address);
+    localStorage.setItem("phone"+`${id}`, selectedObject.phone);
+    localStorage.setItem("salary"+`${id}`, selectedObject.salary);
+    localStorage.setItem("dob"+`${id}`, selectedObject.dob);
+    localStorage.setItem("remVac"+`${id}`, selectedObject.remVac);
+    localStorage.setItem("appVac"+`${id}`, selectedObject.appVac);
+    if (maleRadio.checked) {
+        selectedObject.gender = 'male';
+        localStorage.setItem("gender"+`${id}`, selectedObject.gender);
+    } else if (femaleRadio.checked) {
+        selectedObject.gender = 'female';
+        localStorage.setItem("gender"+`${id}`, selectedObject.gender);
+    }
+    selectedObject.marital = document.querySelector('option:checked').textContent;
+    localStorage.setItem("marital"+`${id}`, selectedObject.marital);
+    // console.log(data);
+    window.location.href="home.html";
 });

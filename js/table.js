@@ -1,5 +1,23 @@
-import {data} from './data.js';
-
+// import {data} from './data.js';
+// console.log(localStorage);
+const data = [];
+for(let i=0; i< localStorage.length; i++){
+    let key = `${i+1}`;
+    let temp={
+        id: localStorage.getItem("id"+key),
+        name: localStorage.getItem("name"+key),
+        address: localStorage.getItem("address"+key),
+        dob: localStorage.getItem("dob"+key),
+        email: localStorage.getItem("email"+key),
+        gender: localStorage.getItem("gender"+key),
+        marital: localStorage.getItem("marital"+key),
+        remVac: localStorage.getItem("remVac"+key),
+        appVac: localStorage.getItem("appVac"+key),
+        phone: localStorage.getItem("phone"+key),
+        salary: localStorage.getItem("salary"+key)
+    }
+    data.push(temp);
+}
 const table = document.getElementById("table");
 // short data
 const header = document.createElement("tr");
@@ -9,14 +27,16 @@ header.innerHTML="<th>ID</th>\
                 <th>approved vacation days</th>";
 table.appendChild(header);
 for (let i = 0; i < data.length; i++) {
-    const row = document.createElement("tr");
-    row.innerHTML="<td>"+data[i].id+"</td>\
-                    <td>"+data[i].name+"</td>\
-                    <td>"+data[i].remVac+"</td>\
-                    <td>"+data[i].appVac+"</td>\
-                    <td><a href='edit.html?id="+data[i].id+"'>Edit</a></td>\
-                    <td><a href='vacForm.html?id="+data[i].id+"&name="+data[i].name+"'>Submit Vacation</a></td>";
-    table.appendChild(row);
+    if(data[i].id != null){
+        const row = document.createElement("tr");
+        row.innerHTML="<td>"+data[i].id+"</td>\
+                        <td>"+data[i].name+"</td>\
+                        <td>"+data[i].remVac+"</td>\
+                        <td>"+data[i].appVac+"</td>\
+                        <td><a href='edit.html?id="+data[i].id+"&name="+data[i].name+"'>Edit</a></td>\
+                        <td><a href='vacForm.html?id="+data[i].id+"&name="+data[i].name+"'>Submit Vacation</a></td>";
+        table.appendChild(row);
+    }
 }
 // long data
 const info=document.getElementById("btn");
@@ -31,21 +51,23 @@ info.addEventListener("click", ()=>{
                         <th>date of birth</th>"
     table.appendChild(header);
     for (let i = 0; i < data.length; i++) {
-        const row = document.createElement("tr");
-        row.innerHTML="<td>"+data[i].id+"</td>\
-                        <td>"+data[i].name+"</td>\
-                        <td>"+data[i].remVac+"</td>\
-                        <td>"+data[i].appVac+"</td>\
-                        <td>"+data[i].email+"</td>\
-                        <td>"+data[i].address+"</td>\
-                        <td>"+data[i].phone+"</td>\
-                        <td>"+data[i].gender+"</td>\
-                        <td>"+data[i].marital+"</td>\
-                        <td>"+data[i].salary+"</td>\
-                        <td>"+data[i].dob+"</td>\
-                        <td><a href='edit.html?id="+data[i].id+"'>Edit</a></td>\
-                        <td><a href='vacForm.html?id="+data[i].id+"'>Submit Vacation</a></td>";
-        table.appendChild(row);
+        if(data[i].id != null){
+            const row = document.createElement("tr");
+            row.innerHTML="<td>"+data[i].id+"</td>\
+                            <td>"+data[i].name+"</td>\
+                            <td>"+data[i].remVac+"</td>\
+                            <td>"+data[i].appVac+"</td>\
+                            <td>"+data[i].email+"</td>\
+                            <td>"+data[i].address+"</td>\
+                            <td>"+data[i].phone+"</td>\
+                            <td>"+data[i].gender+"</td>\
+                            <td>"+data[i].marital+"</td>\
+                            <td>"+data[i].salary+"</td>\
+                            <td>"+data[i].dob+"</td>\
+                            <td><a href='edit.html?id="+data[i].id+"&name="+data[i].name+"'>Edit</a></td>\
+                            <td><a href='vacForm.html?id="+data[i].id+"&name="+data[i].name+"'>Submit Vacation</a></td>";
+            table.appendChild(row);
+        }
     }
     info.remove();
 })
@@ -58,7 +80,10 @@ search.addEventListener('submit', (e)=>{
     if(sName.value==""){
         newData=data;
     }else{
-        newData = data.filter(x=>x.name.toLowerCase().includes(sName.value.toLowerCase()));
+        newData = data.filter(x=>{
+            if(x.name != null)
+                return x.name.toLowerCase().includes(sName.value.toLowerCase());
+        });
     }
     table.innerHTML="";
     header.innerHTML="<th>ID</th>\
@@ -74,21 +99,23 @@ search.addEventListener('submit', (e)=>{
                         <th>date of birth</th>"
     table.appendChild(header);
     for (let i = 0; i < newData.length; i++) {
-        const row = document.createElement("tr");
-        row.innerHTML="<td>"+newData[i].id+"</td>\
-                        <td>"+newData[i].name+"</td>\
-                        <td>"+newData[i].remVac+"</td>\
-                        <td>"+newData[i].appVac+"</td>\
-                        <td>"+newData[i].email+"</td>\
-                        <td>"+newData[i].address+"</td>\
-                        <td>"+newData[i].phone+"</td>\
-                        <td>"+newData[i].gender+"</td>\
-                        <td>"+newData[i].marital+"</td>\
-                        <td>"+newData[i].salary+"</td>\
-                        <td>"+newData[i].dob+"</td>\
-                        <td><a href='edit.html?id="+newData[i].id+"'>Edit</a></td>\
-                        <td><a href='vacForm.html?id="+newData[i].id+"'>Submit Vacation</a></td>";
-        table.appendChild(row);
+        if(data[i].id != null){
+            const row = document.createElement("tr");
+            row.innerHTML="<td>"+newData[i].id+"</td>\
+                            <td>"+newData[i].name+"</td>\
+                            <td>"+newData[i].remVac+"</td>\
+                            <td>"+newData[i].appVac+"</td>\
+                            <td>"+newData[i].email+"</td>\
+                            <td>"+newData[i].address+"</td>\
+                            <td>"+newData[i].phone+"</td>\
+                            <td>"+newData[i].gender+"</td>\
+                            <td>"+newData[i].marital+"</td>\
+                            <td>"+newData[i].salary+"</td>\
+                            <td>"+newData[i].dob+"</td>\
+                            <td><a href='edit.html?id="+newData[i].id+"'>Edit</a></td>\
+                            <td><a href='vacForm.html?id="+newData[i].id+"'>Submit Vacation</a></td>";
+            table.appendChild(row);
+        }
     }
     info.remove();
     sName.value="";

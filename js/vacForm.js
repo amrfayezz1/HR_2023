@@ -1,4 +1,4 @@
-import {forms, Form} from './forms.js';
+// import {forms, Form} from './forms.js';
 
 const vac= document.getElementById("vac-form");
 const urlParams = new URLSearchParams(window.location.search);
@@ -13,12 +13,17 @@ vac.addEventListener("submit", (e)=>{
     const from= vac.from.value;
     const to= vac.to.value;
     const reason= vac.reason.value;
-    const id= vac.id.value;
-    const name= vac.name.value;
     
-    const newForm = new Form(id,name,from,to,reason);
-    forms.push(newForm);
-    // window.location.href="./vacations.html";
-    console.log(forms);
+    // const newForm = new Form(idG,nameG,from,to,reason);
+
+    let key = `${idG}`;
+    localStorage.setItem("from"+key, from);
+    localStorage.setItem("to"+key, to);
+    localStorage.setItem("reason"+key, reason);
+    localStorage.setItem("status"+key, "Submitted");
+
+    // forms.push(newForm);
+    window.location.href="./vacations.html";
+    // console.log(forms);
 });
-console.log(forms);
+// console.log(forms);

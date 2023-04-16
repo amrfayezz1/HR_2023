@@ -4,7 +4,7 @@
 const data = [];
 for(let i=0; i< localStorage.length; i++){
     let key = `${i+1}`;
-    if(localStorage.getItem("from"+key)!=null){
+    if(localStorage.getItem("id"+key)!=null && localStorage.getItem("from"+key)!=null){
         let temp={
             id: localStorage.getItem("id"+key),
             name: localStorage.getItem("name"+key),

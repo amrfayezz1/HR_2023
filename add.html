@@ -4,6 +4,7 @@
 <head>
     <title>HR | Add</title>
     <link rel="icon" href="images/resources.png">
+    <link rel="stylesheet" href="style/general.css">
     <link rel="stylesheet" href="style/add.css">
 </head>
 
@@ -13,17 +14,15 @@
             <img src="images/resources.png" alt="HR-image" width="50">
         </div>
         <nav>
-            <ul>
-                <li>
-                    <a href="home.html">Home</a>
-                </li>
-                <li>
-                    <a href="add.html">Add Employee</a>
-                </li>
-                <li>
-                    <a href="vacations.html">Submitted Vacations</a>
-                </li>
-            </ul>
+            <li>
+                <a href="home.html">Home</a>
+            </li>
+            <li>
+                <a href="add.html" class="active">Add Employee</a>
+            </li>
+            <li>
+                <a href="vacations.html">Submitted Vacations</a>
+            </li>
         </nav>
     </header>
     <main>
@@ -58,8 +57,11 @@
             <input type="reset" value="Reset">
             <input type="submit" value="Add">
         </form>
-        <script type="module" src="js/add.js"></script>
     </main>
+    <footer>
+        <h4>&copy; 2023 <span>FCAI-CU</span>. All rights reserved</h4>
+    </footer>
+    <script type="module" src="js/add.js"></script>
 </body>
 
 </html>

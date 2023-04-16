@@ -24,7 +24,7 @@ const header = document.createElement("tr");
 header.innerHTML="<th>ID</th>\
                 <th>Name</th>\
                 <th>remaining vacation days</th>\
-                <th>approved vacation days</th>";
+                <th>approved vacation days</th><th></th><th></th>";
 table.appendChild(header);
 for (let i = 0; i < data.length; i++) {
     if(data[i].id != null){
@@ -33,8 +33,8 @@ for (let i = 0; i < data.length; i++) {
                         <td>"+data[i].name+"</td>\
                         <td>"+data[i].remVac+"</td>\
                         <td>"+data[i].appVac+"</td>\
-                        <td><a href='edit.html?id="+data[i].id+"&name="+data[i].name+"'>Edit</a></td>\
-                        <td><a href='vacForm.html?id="+data[i].id+"&name="+data[i].name+"'>Submit Vacation</a></td>";
+                        <td><a class='link' href='edit.html?id="+data[i].id+"&name="+data[i].name+"'>Edit</a></td>\
+                        <td class='add'><a class='link' href='vacForm.html?id="+data[i].id+"&name="+data[i].name+"'>Add Vacation</a></td>";
         table.appendChild(row);
     }
 }
@@ -42,13 +42,17 @@ for (let i = 0; i < data.length; i++) {
 const info=document.getElementById("btn");
 info.addEventListener("click", ()=>{
     table.innerHTML="";
-    header.innerHTML+="<th>Email</th>\
+    header.innerHTML="<th>ID</th>\
+                        <th>Name</th>\
+                        <th>remaining vacation days</th>\
+                        <th>approved vacation days</th>\
+                        <th>Email</th>\
                         <th>address</th>\
                         <th>phone no.</th>\
                         <th>gender</th>\
                         <th>marital status</th>\
                         <th>salary</th>\
-                        <th>date of birth</th>"
+                        <th>date of birth</th><th></th><th></th>"
     table.appendChild(header);
     for (let i = 0; i < data.length; i++) {
         if(data[i].id != null){
@@ -64,8 +68,8 @@ info.addEventListener("click", ()=>{
                             <td>"+data[i].marital+"</td>\
                             <td>"+data[i].salary+"</td>\
                             <td>"+data[i].dob+"</td>\
-                            <td><a href='edit.html?id="+data[i].id+"&name="+data[i].name+"'>Edit</a></td>\
-                            <td><a href='vacForm.html?id="+data[i].id+"&name="+data[i].name+"'>Submit Vacation</a></td>";
+                            <td><a class='link' href='edit.html?id="+data[i].id+"&name="+data[i].name+"'>Edit</a></td>\
+                            <td class='add'><a class='link' href='vacForm.html?id="+data[i].id+"&name="+data[i].name+"'>Add Vacation</a></td>";
             table.appendChild(row);
         }
     }
@@ -96,7 +100,7 @@ search.addEventListener('submit', (e)=>{
                         <th>gender</th>\
                         <th>marital status</th>\
                         <th>salary</th>\
-                        <th>date of birth</th>"
+                        <th>date of birth</th><th></th><th></th>"
     table.appendChild(header);
     for (let i = 0; i < newData.length; i++) {
         if(data[i].id != null){
@@ -112,8 +116,8 @@ search.addEventListener('submit', (e)=>{
                             <td>"+newData[i].marital+"</td>\
                             <td>"+newData[i].salary+"</td>\
                             <td>"+newData[i].dob+"</td>\
-                            <td><a href='edit.html?id="+newData[i].id+"'>Edit</a></td>\
-                            <td><a href='vacForm.html?id="+newData[i].id+"'>Submit Vacation</a></td>";
+                            <td><a class='link' href='edit.html?id="+newData[i].id+"'>Edit</a></td>\
+                            <td class='add'><a class='link' href='vacForm.html?id="+newData[i].id+"'>Add Vacation</a></td>";
             table.appendChild(row);
         }
     }

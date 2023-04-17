@@ -19,24 +19,26 @@ form.addEventListener('submit', (e) => {
     // window.location.href="home.html";
     // console.log(data);
 
-    if(localStorage.getItem("id"+id)!=null){
+    if (localStorage.getItem("id" + id) != null) {
         let empid = document.getElementById("empID");
-        empid.textContent="This ID already exists!";
-        empid.style.display="unset";
-        form.id.value="";
-    }else{
-        localStorage.setItem("id"+id, id);
-        localStorage.setItem("name"+id, name);
-        localStorage.setItem("email"+id, email);
-        localStorage.setItem("address"+id, address);
-        localStorage.setItem("phone"+id, phone);
-        localStorage.setItem("gender"+id, gender);
-        localStorage.setItem("marital"+id, maritalStatus);
-        localStorage.setItem("salary"+id, salary);
-        localStorage.setItem("dob"+id, dob);
-        localStorage.setItem("remVac"+id, 30);
-        localStorage.setItem("appVac"+id, 0);
+        empid.textContent = "This ID already exists!";
+        empid.style.display = "unset";
+        form.id.value = "";
+    } else {
+        localStorage.setItem("id" + id, id);
+        localStorage.setItem("name" + id, name);
+        localStorage.setItem("email" + id, email);
+        localStorage.setItem("address" + id, address);
+        localStorage.setItem("phone" + id, phone);
+        localStorage.setItem("gender" + id, gender);
+        localStorage.setItem("marital" + id, maritalStatus);
+        localStorage.setItem("salary" + id, salary);
+        localStorage.setItem("dob" + id, dob);
+        localStorage.setItem("remVac" + id, 30);
+        localStorage.setItem("appVac" + id, 0);
         window.location.href = "home.html";
     }
 });
 // console.log(data);
+
+

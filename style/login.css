@@ -12,13 +12,23 @@ body {
     background: var(--applewhite);
 }
 
-
-
 .container {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 80vh;
+}
+
+
+.bg {
+    opacity: 0.2;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+    object-fit: cover;
 }
 
 .login {

@@ -18,18 +18,18 @@ const salaryInput = document.querySelector('input[name="salary"]');
 const birthInput = document.querySelector('input[name="birth"]');
 
 // const selectedObject = data.find(obj => obj.id === id);
-const selectedObject ={
-    id: localStorage.getItem("id"+`${id}`),
-    name: localStorage.getItem("name"+`${id}`),
-    address: localStorage.getItem("address"+`${id}`),
-    dob: localStorage.getItem("dob"+`${id}`),
-    email: localStorage.getItem("email"+`${id}`),
-    gender: localStorage.getItem("gender"+`${id}`),
-    marital: localStorage.getItem("marital"+`${id}`),
-    remVac: localStorage.getItem("remVac"+`${id}`),
-    appVac: localStorage.getItem("appVac"+`${id}`),
-    phone: localStorage.getItem("phone"+`${id}`),
-    salary: localStorage.getItem("salary"+`${id}`)
+const selectedObject = {
+    id: localStorage.getItem("id" + `${id}`),
+    name: localStorage.getItem("name" + `${id}`),
+    address: localStorage.getItem("address" + `${id}`),
+    dob: localStorage.getItem("dob" + `${id}`),
+    email: localStorage.getItem("email" + `${id}`),
+    gender: localStorage.getItem("gender" + `${id}`),
+    marital: localStorage.getItem("marital" + `${id}`),
+    remVac: localStorage.getItem("remVac" + `${id}`),
+    appVac: localStorage.getItem("appVac" + `${id}`),
+    phone: localStorage.getItem("phone" + `${id}`),
+    salary: localStorage.getItem("salary" + `${id}`)
 };
 
 idInput.value = selectedObject.id;
@@ -42,7 +42,7 @@ if (selectedObject.gender === 'male') {
 } else if (selectedObject.gender === 'female') {
     femaleRadio.checked = true;
 }
-document.querySelector('option[value="'+selectedObject.marital.toLowerCase()+'"]').selected=true;
+document.querySelector('option[value="' + selectedObject.marital.toLowerCase() + '"]').selected = true;
 vacationLeftInput.value = selectedObject.remVac;
 vacationApprovedInput.value = selectedObject.appVac;
 salaryInput.value = selectedObject.salary;
@@ -50,27 +50,27 @@ birthInput.value = selectedObject.dob;
 
 const del = document.getElementById("del");
 del.addEventListener("click", flag);
-function flag(){
-    if(confirm("Are you sure you want to delete employee?")){
+function flag() {
+    if (confirm("Are you sure you want to delete employee?")) {
         // data.splice(data.homeOf(selectedObject),1);
         // console.log(data);
-        localStorage.removeItem("id"+`${id}`);
-        localStorage.removeItem("name"+`${id}`);
-        localStorage.removeItem("email"+`${id}`);
-        localStorage.removeItem("address"+`${id}`);
-        localStorage.removeItem("phone"+`${id}`);
-        localStorage.removeItem("gender"+`${id}`);
-        localStorage.removeItem("marital"+`${id}`);
-        localStorage.removeItem("salary"+`${id}`);
-        localStorage.removeItem("dob"+`${id}`);
-        localStorage.removeItem("remVac"+`${id}`);
-        localStorage.removeItem("appVac"+`${id}`);
-        window.location.href="home.html";
+        localStorage.removeItem("id" + `${id}`);
+        localStorage.removeItem("name" + `${id}`);
+        localStorage.removeItem("email" + `${id}`);
+        localStorage.removeItem("address" + `${id}`);
+        localStorage.removeItem("phone" + `${id}`);
+        localStorage.removeItem("gender" + `${id}`);
+        localStorage.removeItem("marital" + `${id}`);
+        localStorage.removeItem("salary" + `${id}`);
+        localStorage.removeItem("dob" + `${id}`);
+        localStorage.removeItem("remVac" + `${id}`);
+        localStorage.removeItem("appVac" + `${id}`);
+        window.location.href = "home.html";
     }
 }
 
 const update = document.getElementById("update");
-update.addEventListener("click", (e)=>{
+update.addEventListener("click", (e) => {
     e.preventDefault();
     selectedObject.id = idInput.value;
     selectedObject.name = nameInput.value;
@@ -81,24 +81,60 @@ update.addEventListener("click", (e)=>{
     selectedObject.dob = birthInput.value;
     selectedObject.remVac = vacationLeftInput.value;
     selectedObject.appVac = vacationApprovedInput.value;
-    localStorage.setItem("id"+`${id}`, selectedObject.id);
-    localStorage.setItem("name"+`${id}`, selectedObject.name);
-    localStorage.setItem("email"+`${id}`, selectedObject.email);
-    localStorage.setItem("address"+`${id}`, selectedObject.address);
-    localStorage.setItem("phone"+`${id}`, selectedObject.phone);
-    localStorage.setItem("salary"+`${id}`, selectedObject.salary);
-    localStorage.setItem("dob"+`${id}`, selectedObject.dob);
-    localStorage.setItem("remVac"+`${id}`, selectedObject.remVac);
-    localStorage.setItem("appVac"+`${id}`, selectedObject.appVac);
+    localStorage.setItem("id" + `${id}`, selectedObject.id);
+    localStorage.setItem("name" + `${id}`, selectedObject.name);
+    localStorage.setItem("email" + `${id}`, selectedObject.email);
+    localStorage.setItem("address" + `${id}`, selectedObject.address);
+    localStorage.setItem("phone" + `${id}`, selectedObject.phone);
+    localStorage.setItem("salary" + `${id}`, selectedObject.salary);
+    localStorage.setItem("dob" + `${id}`, selectedObject.dob);
+    localStorage.setItem("remVac" + `${id}`, selectedObject.remVac);
+    localStorage.setItem("appVac" + `${id}`, selectedObject.appVac);
     if (maleRadio.checked) {
         selectedObject.gender = 'male';
-        localStorage.setItem("gender"+`${id}`, selectedObject.gender);
+        localStorage.setItem("gender" + `${id}`, selectedObject.gender);
     } else if (femaleRadio.checked) {
         selectedObject.gender = 'female';
-        localStorage.setItem("gender"+`${id}`, selectedObject.gender);
+        localStorage.setItem("gender" + `${id}`, selectedObject.gender);
     }
     selectedObject.marital = document.querySelector('option:checked').textContent;
-    localStorage.setItem("marital"+`${id}`, selectedObject.marital);
+    localStorage.setItem("marital" + `${id}`, selectedObject.marital);
     // console.log(data);
-    window.location.href="home.html";
+    window.location.href = "home.html";
 });
+
+
+
+function validateForm() {
+
+    const name = document.getElementById("name");
+    const email = document.getElementById("email");
+    const phone = document.getElementById("phone");
+    const salary = document.getElementById("salary");
+    const nameRegex = /^[A-Za-z ]{3,32}$/;
+    const emailRegex = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/;
+    const phoneRegex = /^[0-9]{11}$/;
+    const salaryRegex = /^[0-9]{3,}$/;
+
+    if (!nameRegex.test(name)) {
+        alert("Please enter a valid name (only letters with a minimum of 3)!");
+        return false;
+    }
+
+    if (!emailRegex.test(email)) {
+        alert("Please enter a valid email address!");
+        return false;
+    }
+
+    if (!phoneRegex.test(phone)) {
+        alert("Please enter a valid phone number!");
+        return false;
+    }
+
+    if (!salaryRegex.test(salary)) {
+        alert("Please enter a valid Salary!");
+        return false;
+    }
+
+    return true;
+}

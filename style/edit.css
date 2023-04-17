@@ -1,4 +1,4 @@
-.errorID{
+.errorID {
     margin: 10px 20px;
     padding: 5px;
     color: brown;
@@ -22,13 +22,15 @@
 body {
     background: var(--applewhite);
 }
+
 .container {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    
+
 }
+
 .form {
     display: flex;
     justify-content: center;
@@ -44,14 +46,16 @@ body {
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
 }
-.form h2{
+
+.form h2 {
     color: var(--darkblue);
     font-size: 35px;
     font-weight: 700;
     margin-bottom: 15px;
-    
+
     text-align: center;
 }
+
 .sub {
     background: var(--darkblue);
     color: var(--applewhite);
@@ -74,6 +78,7 @@ body {
     -ms-border-radius: 100px;
     -o-border-radius: 100px;
 }
+
 .sub:hover {
     font-size: 12px;
     padding: 5px 22px;
@@ -96,35 +101,24 @@ body {
     border-radius: 10px;
     border: 0.5px solid #0C243C;
     width: 40%;
-    height: 15px;
+    height: 17px;
     margin-top: 20px;
-    
-   
+
+
 }
+
 .form input[type=number] {
     background-color: var(--applewhite);
     border-radius: 10px;
     border: 0.5px solid #0C243C;
     width: 40%;
-    height: 20px;
+    height: 17px;
     margin-top: 20px;
-    
-   
+
+
 }
 
-.form input[type=password] {
-    background-color: var(--applewhite);
-    border-radius: 12px;
-    border: 1px solid #0C243C;
-    width: 40%;
-    height: 20px;
-    margin-top: 20px;
-    
-    -webkit-border-radius: 20px;
-    -moz-border-radius: 20;
-    -ms-border-radius: 20px;
-    -o-border-radius: 20px;
-}
+
 .form input[type=date] {
     background-color: var(--applewhite);
     border-radius: 10px;
@@ -132,9 +126,10 @@ body {
     width: 40%;
     height: 20px;
     margin-top: 20px;
-    
-   
+
+
 }
+
 .form input[type=radio] {
     background-color: var(--applewhite);
     border-radius: 2px;
@@ -143,10 +138,8 @@ body {
     height: 20px;
     margin-top: 20px;
     margin-bottom: 20px;
-    margin-left: 5px;
-    margin-right: 5px;
-    
-   
+    margin-left: 2px;
+    margin-right: 1px;
 }
 
 

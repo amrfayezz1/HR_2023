@@ -28,7 +28,7 @@ header.innerHTML = "<th>ID</th>\
                 <th>From</th>\
                 <th>To</th>\
                 <th>Reason</th>\
-                <th>Status</th>";
+                <th>Status</th><th></th><th></th>";
 table.appendChild(header);
 for (let i = 0; i < data.length; i++) {
     // const selectedObject = data.find(obj => obj.id == forms[i].id);

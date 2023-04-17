@@ -29,6 +29,7 @@ td {
     border: none;
     text-decoration: none;
     padding: 8px;
+    cursor: pointer;
 }
 
 .accept:hover,
@@ -39,4 +40,9 @@ td {
     border: none;
     text-decoration: none;
     padding: 8px;
+}
+
+.tData {
+    margin: auto;
+    overflow-x: auto;
 }

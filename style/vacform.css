@@ -74,6 +74,10 @@ h2{
     font-size: x-large;
     
 }
+textarea{
+    font-size: larger;
+    padding-left: 10px;
+}
 .bg {
     opacity: 0.2;
     position: absolute;

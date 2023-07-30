@@ -65,7 +65,7 @@ function flag() {
         localStorage.removeItem("dob" + `${id}`);
         localStorage.removeItem("remVac" + `${id}`);
         localStorage.removeItem("appVac" + `${id}`);
-        window.location.href = "home.html";
+        window.location.href = "index.html";
     }
 }
 
@@ -100,7 +100,7 @@ update.addEventListener("click", (e) => {
     selectedObject.marital = document.querySelector('option:checked').textContent;
     localStorage.setItem("marital" + `${id}`, selectedObject.marital);
     // console.log(data);
-    window.location.href = "home.html";
+    window.location.href = "index.html";
 });
 
 

@@ -16,7 +16,7 @@ form.addEventListener('submit', (e) => {
 
     // const newEmp = new Emp(id,name,email,address,phone,gender,maritalStatus,salary,dob);
     // data.push(newEmp);
-    // window.location.href="home.html";
+    // window.location.href="index.html";
     // console.log(data);
 
     if (localStorage.getItem("id" + id) != null) {
@@ -36,7 +36,7 @@ form.addEventListener('submit', (e) => {
         localStorage.setItem("dob" + id, dob);
         localStorage.setItem("remVac" + id, 30);
         localStorage.setItem("appVac" + id, 0);
-        window.location.href = "home.html";
+        window.location.href = "index.html";
     }
 });
 // console.log(data);

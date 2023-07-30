@@ -47,7 +47,7 @@ for(let i=0; i< Number(localStorage.getItem("numUsers")); i++){
 //         if (username === accounts[i].username && password === accounts[i].password) {
 //             showTooltip("Login successful!", "#abb734");
 //             setTimeout(() => {
-//                 window.location.href = "index.html";
+//                 window.location.href = "home.html";
 //             }, 2000);
 //             return true;
 //         }

@@ -5,32 +5,50 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HR | Vacations</title>
+    <title>HR | Home</title>
     <link rel="icon" href="images/resources.png">
     <link rel="stylesheet" href="style/general.css">
-    <link rel="stylesheet" href="style/vacations.css">
+    <link rel="stylesheet" href="style/general.css">
+    <link rel="stylesheet" href="style/home.css">
+
+    <script src="js/login.js"></script>
 </head>
 
 <body>
     <header>
+        <!-- logo -->
         <div>
             <a href="index.html" title="Go to login page"><img src="images/resources.png" alt="HR-image" width="50"></a>
         </div>
+        <!-- navbar -->
         <nav>
             <li>
-                <a href="home.html">Home</a>
+                <a href="home.html" class="active">Home</a>
             </li>
             <li>
                 <a href="add.html">Add Employee</a>
             </li>
             <li>
-                <a href="vacations.html" class="active">Submitted Vacations</a>
+                <a href="vacations.html">Submitted Vacations</a>
             </li>
         </nav>
     </header>
     <main>
-        <h2>Submitted Vacations</h2>
+        <h1 style="text-align: center;">
+            Welcome to HR Insight
+        </h1>
+        <h3>
+            <b>Gain Valuable Insights into the World of HR</b>
+        </h3>
+        <div>
+            <h3>To Search for an Employee:</h3>
+            <form id="search">
+                <input type="search" name="search" placeholder="Search by name" id="sName">
+                <button type="submit" id="sBtn">Search</button>
+            </form>
+        </div>
         <br>
+        <button id="btn">Show All Info</button>
         <div class="tData">
             <table style="text-align: center;" id="table"></table>
         </div>
@@ -38,7 +56,8 @@
     <footer>
         <h4>&copy; 2023 <span>FCAI-CU</span>. All rights reserved</h4>
     </footer>
-    <script src="js/vacations.js" type="module"></script>
+
+    <script type="module" src="js/table.js"></script>
 </body>
 
 </html>

@@ -2,62 +2,36 @@
 <html>
 
 <head>
+    <title>HR | Login</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HR | Home</title>
     <link rel="icon" href="images/resources.png">
-    <link rel="stylesheet" href="style/general.css">
-    <link rel="stylesheet" href="style/general.css">
-    <link rel="stylesheet" href="style/home.css">
+    <link rel="stylesheet" href="style/login.css">
 
-    <script src="js/login.js"></script>
 </head>
 
-<body>
-    <header>
-        <!-- logo -->
-        <div>
-            <a href="login.html" title="Go to login page"><img src="images/resources.png" alt="HR-image" width="50"></a>
-        </div>
-        <!-- navbar -->
-        <nav>
-            <li>
-                <a href="index.html" class="active">Home</a>
-            </li>
-            <li>
-                <a href="add.html">Add Employee</a>
-            </li>
-            <li>
-                <a href="vacations.html">Submitted Vacations</a>
-            </li>
-        </nav>
-    </header>
-    <main>
-        <h1 style="text-align: center;">
-            Welcome to HR Insight
-        </h1>
-        <h3>
-            <b>Gain Valuable Insights into the World of HR</b>
-        </h3>
-        <div>
-            <h3>To Search for an Employee:</h3>
-            <form id="search">
-                <input type="search" name="search" placeholder="Search by name" id="sName">
-                <button type="submit" id="sBtn">Search</button>
-            </form>
-        </div>
-        <br>
-        <button id="btn">Show All Info</button>
-        <div class="tData">
-            <table style="text-align: center;" id="table"></table>
-        </div>
-    </main>
-    <footer>
-        <h4>&copy; 2023 <span>FCAI-CU</span>. All rights reserved</h4>
-    </footer>
+<body class="wrap">
 
-    <script type="module" src="js/table.js"></script>
+    <div class="content">
+        <img src="images/resources.png" width="50">
+        <div class="container">
+            <div class="login">
+                <form id="login-form">
+                    <img class="bg" src="images/bg1.jpg">
+                    <h1>Login Page</h1>
+                    <label for="username">Username: </label><br>
+                    <input type="text" id="username" name="username" placeholder=" Enter Username"><br><br>
+                    <label for="password">Password: </label><br>
+                    <input type="password" id="password" name="password" placeholder=" Enter Password"><br><br>
+                    <input class="sub" type="submit" value="Login">
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="js/login.js"></script>
+    <script type="module" src="js/data.js"></script>
+    <script type="module" src="js/forms.js"></script>
 </body>
 
 </html>

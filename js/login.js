@@ -27,40 +27,40 @@ for(let i=0; i< Number(localStorage.getItem("numUsers")); i++){
     accounts.push(temp);
 }
 
-// function showTooltip(message, color) {
-//     const tooltip = document.createElement("div");
-//     tooltip.textContent = message;
-//     tooltip.classList.add("tooltip");
-//     tooltip.style.backgroundColor=color;
-//     document.body.appendChild(tooltip);
-//     setTimeout(() => {
-//         document.body.removeChild(tooltip);
-//     }, 2000);
-// }
+function showTooltip(message, color) {
+    const tooltip = document.createElement("div");
+    tooltip.textContent = message;
+    tooltip.classList.add("tooltip");
+    tooltip.style.backgroundColor=color;
+    document.body.appendChild(tooltip);
+    setTimeout(() => {
+        document.body.removeChild(tooltip);
+    }, 2000);
+}
 
-// function verifyLogin(e) {
-//     e.preventDefault();
-//     let username = document.getElementById("username").value;
-//     let password = document.getElementById("password").value;
+function verifyLogin(e) {
+    e.preventDefault();
+    // let username = document.getElementById("username").value;
+    // let password = document.getElementById("password").value;
     
-//     for (let i = 0; i < accounts.length; i++) {
-//         if (username === accounts[i].username && password === accounts[i].password) {
-//             showTooltip("Login successful!", "#abb734");
-//             setTimeout(() => {
-//                 window.location.href = "home.html";
-//             }, 2000);
-//             return true;
-//         }
-//     }
-//     if(username=="" || password==""){
-//         showTooltip("Empty username or password!", "#fa4968");
-//     } else{
-//         showTooltip("Invalid username or password!", "#fa4968");
-//     }
-//     document.getElementById("username").value="";
-//     document.getElementById("password").value="";
-//     return false;
-// }
+    // for (let i = 0; i < accounts.length; i++) {
+    //     if (username === accounts[i].username && password === accounts[i].password) {
+            showTooltip("Login successful!", "#abb734");
+            setTimeout(() => {
+                window.location.href = "home.html";
+            }, 2000);
+            return true;
+    //     }
+    // }
+    // if(username=="" || password==""){
+    //     showTooltip("Empty username or password!", "#fa4968");
+    // } else{
+    //     showTooltip("Invalid username or password!", "#fa4968");
+    // }
+    // document.getElementById("username").value="";
+    // document.getElementById("password").value="";
+    // return false;
+}
 
-// const loginForm = document.getElementById('login-form');
-// loginForm.addEventListener('submit', verifyLogin);
+const loginForm = document.getElementById('login-form');
+loginForm.addEventListener('submit', verifyLogin);
